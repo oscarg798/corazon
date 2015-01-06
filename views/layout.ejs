@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +10,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     
+ 
     <!--
     Stylesheets and Preprocessors
     ==============================
@@ -34,7 +36,10 @@
     </head>
     <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  ...
+  <audio id="my_audio">
+  <source src="/sound/quisiera.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 </nav>
       <%- body %>
       <!--
@@ -75,9 +80,17 @@
       + Import scripts from other directories
       + Use a different preprocessor, like TypeScript
       -->
+
       <!--SCRIPTS-->
       <script src="/js/dependencies/sails.io.js"></script>
-      <script src="/js/home.js"></script>
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
       <!--SCRIPTS END-->
+            <script src="/js/home.js"></script>
+         <script>
+    $(document).ready(function() {
+        $("#my_audio").get(0).play();
+    });
+    </script>
     </body>
   </html>
